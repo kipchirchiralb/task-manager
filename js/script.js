@@ -1,6 +1,18 @@
 let form = document.querySelector("form");
 let itemsList = document.querySelector("#items-list");
 
+const countItems = () => {
+  let count = document.querySelector("#count");
+  count.textContent = itemsList.childElementCount;
+};
+countItems();
+
+const deleteItem = (e) => {
+  let item = e.target.parentNode.parentNode;
+  itemsList.removeChild(item);
+  countItems();
+};
+
 const addItem = (e) => {
   e.preventDefault();
   let newItem = document.querySelector("#new-item");
@@ -13,24 +25,15 @@ const addItem = (e) => {
     icon.classList.add("fa-solid");
     icon.classList.add("fa-trash-can");
     span.className = "delete-icon";
+    icon.addEventListener("click", deleteItem);
     span.appendChild(icon);
     li.appendChild(span);
     itemsList.appendChild(li);
     form.reset();
+    countItems();
   } else {
     console.log("empty");
   }
 };
+
 form.addEventListener("submit", addItem);
-
-let deleteIcon = document.querySelectorAll(".delete-icon");
-
-const deleteItem = (e) => {
-  console.log("here");
-  let liItem = document.querySelector(".item");
-  itemsList.removeChild(liItem);
-};
-
-deleteIcon.forEach((icon) => {
-  icon.addEventListener("click", deleteItem);
-});
