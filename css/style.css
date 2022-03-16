@@ -1,0 +1,87 @@
+@font-face {
+  font-family: Ubuntu-Mono;
+  src: url(UbuntuMono-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Ubuntu-Mono, sans-serif;
+}
+
+body {
+  background-color: #eeeff0;
+}
+
+.container {
+  padding: 0 100px;
+}
+
+header {
+  height: 70px;
+  background-color: #c76868;
+  color: #fff;
+  font-size: 28px;
+  /* margin: auto; */
+  display: flex;
+  align-items: center;
+}
+
+form {
+  margin: 5px 0;
+}
+
+form input {
+  font-size: 22px;
+  padding: 8px 10px;
+}
+form input[type="text"] {
+  width: 50%;
+}
+form input[type="submit"] {
+  background-color: #c76868;
+  color: #fff;
+  border: 1px solid #c76868;
+  border-radius: 5px;
+}
+form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #c76868;
+}
+
+.item {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.item::marker {
+  color: #c76868;
+  content: "";
+}
+
+.item span {
+  /* background-color: #ff0000; */
+  /* border: 1px solid #ff0000; */
+  /* border-radius: 5px; */
+  color: #ff0000;
+  padding: 0 6px;
+  float: right;
+}
+
+.item span:hover {
+  /* background-color: #fff; */
+
+  color: #008000;
+}
+
+.btn {
+  background-color: #008000;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.alert {
+  background-color: #c76868;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
